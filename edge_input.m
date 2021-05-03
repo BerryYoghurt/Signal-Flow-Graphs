@@ -1,3 +1,5 @@
+%input original code, for reference
+
 s = [1 2 3 4];
 t = [2 3 4 1];
 weights = [10 20 30 40];

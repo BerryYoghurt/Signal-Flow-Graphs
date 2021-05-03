@@ -85,16 +85,15 @@ if isnan(n)
     set(handles.edit1,'string','0');
     n=0
     warndlg('Input must be numbers');
-    return
-end
-%I replaced the else part by return just to reduce indentation
-axes(handles.axes1);
-G = digraph();
-e = G.Edges;
-G = addnode(G,n);
-p = plot(G,'Layout','force');
-set(handles.axes1,'XTick',[])
-set(handles.axes1,'YTick',[])
+
+else 
+    axes(handles.axes1);
+    G = digraph();
+    e = G.Edges;
+    G = addnode(G,n);
+    p = plot(G,'Layout','force');
+    set(handles.axes1,'XTick',[])
+    set(handles.axes1,'YTick',[])
     
     [x,y] = ginput(2);%get 2 points from user
     [~,srcid] = min(hypot(x(1) - p.XData, y(1) - p.YData)); %obtain node mith minimum distance to first input point
@@ -102,21 +101,9 @@ set(handles.axes1,'YTick',[])
     
     id = findedge(G,srcid,tarid);
     if id ~= 0
-        warndlg(sprintf('An edge from %d to %d already exits',srcid,tarid));
-        return
-    end
+        warndlg(sprintf('Nod
     
-    w = str2double(inputdlg('Enter the weight'));
-    if isnan(w)
-        warndlg(sprintf('Edge weight must be a number'));
-        return
-    end
-    
-    %every input is correct
-    G = addedge(G,srcid,tarid,w);
-    p = plot(G,'Layout','force','EdgeLabel',G.Edges.Weight);
-    
-
+end
 
 
 % --- Executes on button press in result.
