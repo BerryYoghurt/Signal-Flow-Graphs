@@ -22,7 +22,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 03-May-2021 16:06:24
+% Last Modified by GUIDE v2.5 03-May-2021 21:08:10
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -71,6 +71,8 @@ function varargout = GUI_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
+global n;
+n=0;
 set(handles.axes1,'XTick',[])
 set(handles.axes1,'YTick',[])
 
@@ -80,41 +82,23 @@ function display_Callback(hObject, eventdata, handles)
 % hObject    handle to display (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-n=str2double(get(handles.edit1, 'String'))
-if isnan(n)
+n=str2double(get(handles.edit1, 'String'));
+if isnan(n) || isempty(n) || n<=0
     set(handles.edit1,'string','0');
-    n=0
-    warndlg('Input must be numbers');
+    n=0;
+    warndlg('Input must be positive numbers');
     return
 end
-%I replaced the else part by return just to reduce indentation
+
 axes(handles.axes1);
+global G; global p ; global n;
 G = digraph();
 e = G.Edges;
 G = addnode(G,n);
 p = plot(G,'Layout','force');
 set(handles.axes1,'XTick',[])
 set(handles.axes1,'YTick',[])
-    
-    [x,y] = ginput(2);%get 2 points from user
-    [~,srcid] = min(hypot(x(1) - p.XData, y(1) - p.YData)); %obtain node mith minimum distance to first input point
-    [~,tarid] = min(hypot(x(2) - p.XData, y(2) - p.YData)); %minimum distance to second input point
-    
-    id = findedge(G,srcid,tarid);
-    if id ~= 0
-        warndlg(sprintf('An edge from %d to %d already exits',srcid,tarid));
-        return
-    end
-    
-    w = str2double(inputdlg('Enter the weight'));
-    if isnan(w)
-        warndlg(sprintf('Edge weight must be a number'));
-        return
-    end
-    
-    %every input is correct
-    G = addedge(G,srcid,tarid,w);
-    p = plot(G,'Layout','force','EdgeLabel',G.Edges.Weight);
+
     
 
 
@@ -148,3 +132,38 @@ function edit1_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- Executes on button press in edges.
+function edges_Callback(hObject, eventdata, handles)
+% hObject    handle to edges (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+    global G ;global p; global n;
+    %check number of nodes
+    if n<=0
+        warndlg(sprintf('You must create nodes first'));
+        return
+    end
+    
+    [x,y] = ginput(2);%get 2 points from user
+    [~,srcid] = min(hypot(x(1) - p.XData, y(1) - p.YData)); %obtain node mith minimum distance to first input point
+    [~,tarid] = min(hypot(x(2) - p.XData, y(2) - p.YData)); %minimum distance to second input point
+    
+    id = findedge(G,srcid,tarid);
+    if id ~= 0
+        warndlg(sprintf('An edge from %d to %d already exits',srcid,tarid));
+        return
+    end
+    
+    w = str2double(inputdlg('Enter the weight'));
+    %check weight
+    if isnan(w) || isempty(w)
+        warndlg(sprintf('Edge weight must be a number'));
+        return
+    end
+    %every input is correct
+    G = addedge(G,srcid,tarid,w);
+    p = plot(G,'Layout','force','EdgeLabel',G.Edges.Weight);
+    set(handles.axes1,'XTick',[])
+    set(handles.axes1,'YTick',[])
