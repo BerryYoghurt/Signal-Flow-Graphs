@@ -18,7 +18,7 @@ display('this is a test');
 %      0 0  1 1  ; 
 %      0 1  1 1  ; 
 %      0 0  0 0  ;] ;
-
+% 
 % x = [0 1 0 0 -1 0 0 0;
 %      0 0 -2 0 0 0 0 0;
 %      0 2 0 -4 0 0 0 0;
@@ -60,7 +60,8 @@ x = [0 1 0 0 0 0 0 0;
 
 list = get_paths(G,1,8,8);
 x = forward_path_gain(G, list);
-delta = calc_delta(G)
+d = calc_delta(G);
+ttt = delta(G,list)
 % is_visited = zeros(6,1)
 % is_visited(2)
 
