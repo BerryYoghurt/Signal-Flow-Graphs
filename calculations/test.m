@@ -18,7 +18,7 @@ display('this is a test');
 %      0 0  1 1  ; 
 %      0 1  1 1  ; 
 %      0 0  0 0  ;] ;
-% 
+
 % x = [0 1 0 0 -1 0 0 0;
 %      0 0 -2 0 0 0 0 0;
 %      0 2 0 -4 0 0 0 0;
@@ -36,6 +36,13 @@ x = [0 1 0 0 0 0 0 0;
      0 3 0 0 0 0 -5 0;
      0 0 0 0 0 1 0 0;
      0 0 0 0 0 0 -3 0;];
+
+% x = [0 1 0 0 0 0;
+%      0 0 8 0 0 0;
+%      0 1 0 2 0 0;
+%      0 0 0 0 1 0;
+%      0 -1 0 0 0 1;
+%      0 0 0 0 0 0;];
 
 % names = {'y1', 'y2', 'y3', 'y4', 'y5', 'y6'};
 % G = digraph(x,names);
@@ -59,9 +66,12 @@ x = [0 1 0 0 0 0 0 0;
 %  plot(G1,'EdgeLabel',G1.Edges.Weight);
 
 list = get_paths(G,1,8,8);
-x = forward_path_gain(G, list);
+display('forward paths list');
+celldisp(list);
+x = calc_gains(G, list);
 d = calc_delta(G);
 ttt = delta(G,list)
+result = transfer_function(x, ttt)
 % is_visited = zeros(6,1)
 % is_visited(2)
 
