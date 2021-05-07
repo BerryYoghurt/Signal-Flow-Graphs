@@ -82,6 +82,7 @@ function display_Callback(hObject, eventdata, handles)
 % hObject    handle to display (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+ global n;
 n=str2double(get(handles.edit1, 'String'));
 if isnan(n) || isempty(n) || n<=0
     set(handles.edit1,'string','0');
@@ -91,7 +92,7 @@ if isnan(n) || isempty(n) || n<=0
 end
 
 axes(handles.axes1);
-global G; global p ; global n;
+global G; global p ;
 G = digraph();
 e = G.Edges;
 G = addnode(G,n);
@@ -108,6 +109,8 @@ function result_Callback(hObject, eventdata, handles)
 % hObject    handle to result (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+global G;
+setappdata(0,'evalue',G);
 result;
 
 

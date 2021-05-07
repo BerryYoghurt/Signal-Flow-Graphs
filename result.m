@@ -71,8 +71,9 @@ function varargout = result_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
-%e=getappdata(0,'evalue');
 e='Test'
+G=getappdata(0,'evalue')
+
 set(handles.edit1,'String',e);
 
 
