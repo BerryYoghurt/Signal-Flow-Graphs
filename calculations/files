@@ -1,82 +1,15 @@
-{Index exceeds matrix dimensions.
+forward paths list
+ 
+list{1} =
+ 
+     1     2     3
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('forward_paths', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\forward_paths.m', 7)" style="font-weight:bold">forward_paths</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\forward_paths.m',7,0)">line 7</a>)
-    l = length(graph_list{start_node});
+ 
+ Calculate overall delta:
+listing individual loops: 
+overall delta = 1.000000
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('get_paths', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\get_paths.m', 10)" style="font-weight:bold">get_paths</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\get_paths.m',10,0)">line 10</a>)
-    list = forward_paths(graph_list, start_node, end_node, is_visited, one_path, list);
+transfer_function_value =
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('calculate', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\calculate.m', 6)" style="font-weight:bold">calculate</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\calculate.m',6,0)">line 6</a>)
-list = get_paths(G,1,no_nodes,no_nodes);
+     5
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('result>result_OutputFcn', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\result.m', 76)" style="font-weight:bold">result>result_OutputFcn</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\result.m',76,0)">line 76</a>)
-out=calculate(G,n);
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gui_mainfcn', 'C:\Program Files\MATLAB\R2016a\toolbox\matlab\guide\gui_mainfcn.m', 264)" style="font-weight:bold">gui_mainfcn</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2016a\toolbox\matlab\guide\gui_mainfcn.m',264,0)">line 264</a>)
-        feval(gui_State.gui_OutputFcn, gui_hFigure, [], gui_Handles);
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('result', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\result.m', 42)" style="font-weight:bold">result</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\result.m',42,0)">line 42</a>)
-    gui_mainfcn(gui_State, varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GUI>result_Callback', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m', 115)" style="font-weight:bold">GUI>result_Callback</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m',115,0)">line 115</a>)
-result;
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gui_mainfcn', 'C:\Program Files\MATLAB\R2016a\toolbox\matlab\guide\gui_mainfcn.m', 95)" style="font-weight:bold">gui_mainfcn</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2016a\toolbox\matlab\guide\gui_mainfcn.m',95,0)">line 95</a>)
-        feval(varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GUI', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m', 42)" style="font-weight:bold">GUI</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m',42,0)">line 42</a>)
-    gui_mainfcn(gui_State, varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.graphics.internal.figfile.FigFile/read>@(hObject,eventdata)GUI(''result_Callback'',hObject,eventdata,guidata(hObject))')" style="font-weight:bold">matlab.graphics.internal.figfile.FigFile/read>@(hObject,eventdata)GUI('result_Callback',hObject,eventdata,guidata(hObject))</a>
-} 
-Error while evaluating UIControl Callback
-
-GUI
-{Operands to the || and && operators must be convertible to logical scalar values.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GUI>edges_Callback', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m', 165)" style="font-weight:bold">GUI>edges_Callback</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m',165,0)">line 165</a>)
-    if isnan(w) || isempty(w)
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gui_mainfcn', 'C:\Program Files\MATLAB\R2016a\toolbox\matlab\guide\gui_mainfcn.m', 95)" style="font-weight:bold">gui_mainfcn</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2016a\toolbox\matlab\guide\gui_mainfcn.m',95,0)">line 95</a>)
-        feval(varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GUI', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m', 42)" style="font-weight:bold">GUI</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m',42,0)">line 42</a>)
-    gui_mainfcn(gui_State, varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.graphics.internal.figfile.FigFile/read>@(hObject,eventdata)GUI(''edges_Callback'',hObject,eventdata,guidata(hObject))')" style="font-weight:bold">matlab.graphics.internal.figfile.FigFile/read>@(hObject,eventdata)GUI('edges_Callback',hObject,eventdata,guidata(hObject))</a>
-} 
-Error while evaluating UIControl Callback
-
-opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m',165,0)
-{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('ginput', 'C:\Program Files\MATLAB\R2016a\toolbox\matlab\uitools\ginput.m', 81)" style="font-weight:bold">ginput</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2016a\toolbox\matlab\uitools\ginput.m',81,0)">line 81</a>)
-Interrupted by figure deletion
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GUI>edges_Callback', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m', 153)" style="font-weight:bold">GUI>edges_Callback</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m',153,0)">line 153</a>)
-    [x,y] = ginput(2);%get 2 points from user
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gui_mainfcn', 'C:\Program Files\MATLAB\R2016a\toolbox\matlab\guide\gui_mainfcn.m', 95)" style="font-weight:bold">gui_mainfcn</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2016a\toolbox\matlab\guide\gui_mainfcn.m',95,0)">line 95</a>)
-        feval(varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GUI', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m', 42)" style="font-weight:bold">GUI</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m',42,0)">line 42</a>)
-    gui_mainfcn(gui_State, varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.graphics.internal.figfile.FigFile/read>@(hObject,eventdata)GUI(''edges_Callback'',hObject,eventdata,guidata(hObject))')" style="font-weight:bold">matlab.graphics.internal.figfile.FigFile/read>@(hObject,eventdata)GUI('edges_Callback',hObject,eventdata,guidata(hObject))</a>
-} 
-Error while evaluating DestroyedObject Callback
-
-GUI
-
-w =
-
-     []
-
-{Operands to the || and && operators must be convertible to logical scalar values.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GUI>edges_Callback', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m', 165)" style="font-weight:bold">GUI>edges_Callback</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m',165,0)">line 165</a>)
-    if isnan(w) || isempty(w)
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gui_mainfcn', 'C:\Program Files\MATLAB\R2016a\toolbox\matlab\guide\gui_mainfcn.m', 95)" style="font-weight:bold">gui_mainfcn</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2016a\toolbox\matlab\guide\gui_mainfcn.m',95,0)">line 95</a>)
-        feval(varargin{:});
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GUI', 'C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m', 42)" style="font-weight:bold">GUI</a> (<a href="matlab: opentoline('C:\Users\DELL\Desktop\Signal-Flow-Graphs-main\GUI.m',42,0)">line 42</a>)
-    gui_mainfcn(gui_State, varar
