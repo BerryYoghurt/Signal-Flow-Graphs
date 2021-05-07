@@ -1,6 +1,6 @@
 function list = forward_paths(graph_list, start_node, end_node, is_visited, one_path, list)
     if start_node == end_node   %base case
-        list{length(list)+1} = one_path     %append the found path to the forward paths list
+        list{length(list)+1} = one_path;     %append the found path to the forward paths list
         return
     end
     is_visited(start_node) = 1; %mark node as visited to avoid traversing it twice (avoiding cycles)

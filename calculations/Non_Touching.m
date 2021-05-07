@@ -1,7 +1,7 @@
 function NonL = Non_Touching(i,C) %i>1   , C = loop(G);
 % [ [ 1 2 3 1] [4 5 6 4]  [ 4 8 4] ]  1 2 3 1   4 5 6 4
 NonL = { };   
-combos = combntns(C,i);
+combos = nchoosek(C,i);
 %celldisp(combos);
 rows = size(combos,1);
 col= size(combos,2);

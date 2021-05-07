@@ -109,8 +109,9 @@ function result_Callback(hObject, eventdata, handles)
 % hObject    handle to result (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-global G;
+global G; global n;
 setappdata(0,'evalue',G);
+setappdata(0,'evalue',n);
 result;
 
 
@@ -164,9 +165,9 @@ function edges_Callback(hObject, eventdata, handles)
         end
     end
     
-    w = str2double(inputdlg('Enter the weight'));
+    w = str2double(inputdlg('Enter the weight');
     %check weight
-    if isnan(w) || isempty(w)
+    if isempty(w)|| isnan(w)
         warndlg(sprintf('Edge weight must be a number'));
         return
     end
