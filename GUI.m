@@ -110,8 +110,8 @@ function result_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 global G; global n;
-setappdata(0,'evalue',G);
-setappdata(0,'evalue',n);
+setappdata(0,'graph',G);
+setappdata(0,'no_nodes',n);
 result;
 
 
@@ -162,10 +162,11 @@ function edges_Callback(hObject, eventdata, handles)
                 G = rmedge(G,srcid,tarid);
             case 'No'
                 return
+            otherwise return
         end
     end
     
-    w = str2double(inputdlg('Enter the weight');
+    w = str2double(inputdlg('Enter the weight'));
     %check weight
     if isempty(w)|| isnan(w)
         warndlg(sprintf('Edge weight must be a number'));

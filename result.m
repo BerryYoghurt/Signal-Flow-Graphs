@@ -71,9 +71,9 @@ function varargout = result_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
-G=getappdata(0,'evalue');
-n=getappdata(0,'evalue');
-out=calculate(G,n);
+G=getappdata(0,'graph');
+n=getappdata(0,'no_nodes');
+out=calculate(G,3);
 set(handles.edit1,'String',out);
 
 
