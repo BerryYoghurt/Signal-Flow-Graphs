@@ -155,8 +155,13 @@ function edges_Callback(hObject, eventdata, handles)
     
     id = findedge(G,srcid,tarid);
     if id ~= 0
-        warndlg(sprintf('An edge from %d to %d already exits',srcid,tarid));
-        return
+        answer = questdlg(sprintf('Are you sure you want to overwrite the edge from %d to %d?',srcid,tarid),'Overwriting','Yes','No','No');
+        switch answer
+            case 'Yes'
+                G = rmedge(G,srcid,tarid);
+            case 'No'
+                return
+        end
     end
     
     w = str2double(inputdlg('Enter the weight'));
