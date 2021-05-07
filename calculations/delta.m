@@ -3,17 +3,17 @@ function d_list = delta(G, forward_paths_list)   %returns a list of deltas. delt
    i = 1;
    %G >> a digraph object
    %d_list >> list of deltas {overall delta, delta1, delta2 ,...}
-   display('overall delta:');
-   d_list = [calc_delta(G)] %delta0 (overall delta)
+   display(' Calculate overall delta:');
+   d_list = [calc_delta(G)];%delta0 (overall delta)
+    fprintf('overall delta = %f\n',d_list);
    for p = forward_paths_list    %loops through all paths
        new_G = eleminate_path(G, p{1}); %the graph G without path i
        if numnodes(new_G) == 0 || numedges(new_G) == 0
            delta_i = 1;
        else
-           figure(fig_num);
-           plot(new_G,'EdgeLabel',new_G.Edges.Weight);
-           display('delta ' + i);
+           fprintf('Calculate delta %i\n',i);
            delta_i = calc_delta(new_G); %calculate delta i after removing path i
+           fprintf('delta %i = %f\n',i,delta_i);
            i = i+1;
        end
        %new_G.Nodes
